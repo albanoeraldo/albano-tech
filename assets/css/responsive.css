@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@media (max-width: 880px){
+  .topbar__actions{ width: 100%; justify-content: flex-start; }
+
+  .grid{ grid-template-columns: 1fr; }
+  .steps{ grid-template-columns: 1fr; }
+  .grid--testimonials{ grid-template-columns: 1fr; }
+  .contact__info{ grid-template-columns: 1fr; }
+
+  .hero--media{ padding: 100px 0 60px; }
+}
