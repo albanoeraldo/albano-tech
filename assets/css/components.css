@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-/* ===== Header / Brand ===== */
+/* =========================================================
+   HEADER / BRAND
+========================================================= */
 .topbar{
   position: sticky;
   top: 0;
@@ -18,21 +20,22 @@
   gap: 14px;
 }
 
-.brand{ display:flex; align-items:center; gap: 12px; }
-
-.brand__logo{
-  width: 42px; height: 42px;
-  display:grid; place-items:center;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(79,140,255,0.95), rgba(46,108,255,0.55));
-  box-shadow: 0 12px 30px rgba(79,140,255,0.22);
-  font-weight: 800;
-  letter-spacing: 0.5px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 12px;
 }
 
-.brand__text{ display:flex; flex-direction:column; }
-.brand__name{ font-weight: 800; font-size: 14.5px; }
-.brand__tag{ font-size: 12px; color: var(--muted); }
+.brand__text{
+  display:flex;
+  align-items:center;
+}
+
+.brand__wordmark{
+  height: 40px;
+  width: auto;
+  display: block;
+}
 
 .topbar__actions{
   display:flex;
@@ -42,7 +45,10 @@
   justify-content: flex-end;
 }
 
-/* ===== Botões ===== */
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -57,7 +63,11 @@
   font-size: 13px;
   transition: transform .14s ease, background .14s ease, border-color .14s ease;
 }
-.btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,0.18); }
+
+.btn:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,0.18);
+}
 
 .btn--primary{
   border-color: rgba(79,140,255,0.45);
@@ -74,7 +84,10 @@
 .btn--block{ width: 100%; }
 .btn--lg{ padding: 12px 18px; font-size: 14px; }
 
-/* ===== Badge ===== */
+
+/* =========================================================
+   BADGE
+========================================================= */
 .badge{
   display:inline-flex;
   width: fit-content;
@@ -87,29 +100,30 @@
   font-size: 12.5px;
 }
 
-/* ===== Cards / blocos ===== */
-.card{
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.04);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
 
-.divider{
-  height: 1px;
-  background: var(--border);
-  margin: 14px 0 12px;
-}
-
-/* Serviços */
+/* =========================================================
+   SERVICES
+========================================================= */
 .service{
   border: 1px solid var(--border);
   background: rgba(255,255,255,0.03);
   border-radius: var(--radius);
   padding: 16px;
 }
+
+.service h3{
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.service p{
+  margin: 0;
+  color: var(--muted);
+}
+
 .service__icon{
-  width: 42px; height: 42px;
+  width: 42px;
+  height: 42px;
   display: grid;
   place-items: center;
   border-radius: 14px;
@@ -123,146 +137,7 @@
   font-size: 18px;
 }
 
-.service h3{ margin: 0 0 8px; font-size: 16px; }
-.service p{ margin: 0; color: var(--muted); }
-
-/* Steps */
-.steps{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.step{
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.03);
-  border-radius: var(--radius);
-  padding: 16px;
-}
-.step__num{
-  width: 34px; height: 34px;
-  border-radius: 12px;
-  display:grid; place-items:center;
-  font-weight: 800;
-  background: rgba(79,140,255,0.16);
-  border: 1px solid rgba(79,140,255,0.25);
-  margin-bottom: 10px;
-}
-.step h3{ margin: 0 0 8px; font-size: 16px; }
-.step p{ margin: 0; color: var(--muted); }
-
-/* CTA strip */
-.cta-strip{
-  margin-top: 18px;
-  border: 1px solid rgba(79,140,255,0.22);
-  background: rgba(79,140,255,0.06);
-  border-radius: var(--radius);
-  padding: 16px;
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.cta-strip h3{ margin: 0 0 4px; font-size: 16px; }
-
-/* Depoimentos */
-.grid--testimonials{ grid-template-columns: repeat(2, 1fr); }
-
-.testimonial{
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.03);
-  border-radius: var(--radius);
-  padding: 16px;
-}
-.testimonial p{
-  margin: 0 0 10px;
-  color: rgba(231,238,252,0.92);
-}
-.testimonial__name{
-  color: var(--muted);
-  font-size: 12px;
-}
-
-/* FAQ */
-.faq{ display:grid; gap: 10px; }
-
-details{
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.03);
-  border-radius: var(--radius);
-  padding: 12px 14px;
-}
-summary{ cursor:pointer; font-weight: 750; }
-details p{ margin: 10px 0 0; color: var(--muted); }
-
-/* Contato */
-.contact{
-  display:grid;
-  place-items:center;
-}
-.contact__box{
-  width: min(720px, 100%);
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.03);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow);
-}
-.contact__box h2{ margin: 0 0 10px; }
-
-.contact__info{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 14px 0 14px;
-}
-.info{
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.03);
-  border-radius: 14px;
-  padding: 12px;
-}
-.info__label{
-  display:block;
-  font-size: 12px;
-  color: var(--muted);
-  margin-bottom: 4px;
-}
-.info__value{ font-weight: 750; }
-
-/* Botão flutuante */
-.fab{
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 60;
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  padding: 12px 14px;
-  border-radius: 999px;
-  background: rgba(16, 24, 39, 0.82);
-  border: 1px solid rgba(79,140,255,0.25);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  transition: transform .14s ease, background .14s ease, border-color .14s ease;
-}
-.fab:hover{ transform: translateY(-1px); border-color: rgba(79,140,255,0.40); }
-.fab__icon{ font-size: 16px; }
-.fab__text{ font-weight: 750; font-size: 13px; }
-
-/* Footer */
-.footer{
-  padding: 18px 0;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-.footer__content{
-  display:flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-  color: rgba(231,238,252,0.82);
-}
-
+/* Destaque "Mais solicitado" */
 .service--featured{
   position: relative;
   border-color: rgba(32,192,248,0.28);
@@ -282,21 +157,72 @@ details p{ margin: 10px 0 0; color: var(--muted); }
   color: rgba(255,255,255,0.9);
 }
 
-.section--soft{
-  background: #0F1A2E;          
-  border-top: 1px solid rgba(255,255,255,0.06);
+
+/* =========================================================
+   STEPS (COMO FUNCIONA)
+========================================================= */
+.steps{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
 
-.section--soft .service,
-.section--soft .step,
-.section--soft .testimonial,
-.section--soft details,
-.section--soft .cta-strip,
-.section--soft .contact__box{
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(255,255,255,0.10);
+.step{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius);
+  padding: 16px;
 }
 
+.step__num{
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display:grid;
+  place-items:center;
+  font-weight: 800;
+  background: rgba(79,140,255,0.16);
+  border: 1px solid rgba(79,140,255,0.25);
+  margin-bottom: 10px;
+}
+
+.step h3{
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.step p{
+  margin: 0;
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   CTA STRIP (BASE + VARIAÇÕES)
+========================================================= */
+.cta-strip{
+  margin-top: 18px;
+  border: 1px solid rgba(79,140,255,0.22);
+  background: rgba(79,140,255,0.06);
+  border-radius: var(--radius);
+  padding: 16px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.cta-strip h3{
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.cta-strip p{
+  margin: 0;
+}
+
+/* CTA WhatsApp (verde) */
 .cta-strip--whatsapp{
   border: 1px solid rgba(37, 211, 102, 0.30);
   background:
@@ -314,7 +240,7 @@ details p{ margin: 10px 0 0; color: var(--muted); }
   box-shadow: 0 14px 28px rgba(37, 211, 102, 0.18);
 }
 
-/* Bloco "Atendimento" (mais informativo e profissional) */
+/* CTA Info (Atendimento) */
 .cta-strip--info{
   border: 1px solid rgba(32,192,248,0.18);
   background: rgba(255,255,255,0.02);
@@ -342,4 +268,146 @@ details p{ margin: 10px 0 0; color: var(--muted); }
 
 .info-item strong{
   color: rgba(255,255,255,0.92);
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+.faq{
+  display:grid;
+  gap: 10px;
+}
+
+details{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+summary{
+  cursor:pointer;
+  font-weight: 750;
+}
+
+details p{
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+.contact{
+  display:grid;
+  place-items:center;
+}
+
+.contact__box{
+  width: min(720px, 100%);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.contact__box h2{
+  margin: 0 0 10px;
+}
+
+.contact__info{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 14px 0 14px;
+}
+
+.info{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.info__label{
+  display:block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.phone-link{
+  font-weight: 750;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.phone-link:hover{
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP BUTTON
+========================================================= */
+.fab{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: rgba(16, 24, 39, 0.82);
+  border: 1px solid rgba(79,140,255,0.25);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  transition: transform .14s ease, background .14s ease, border-color .14s ease;
+}
+
+.fab:hover{
+  transform: translateY(-1px);
+  border-color: rgba(79,140,255,0.40);
+}
+
+.fab__icon{ font-size: 16px; }
+.fab__text{ font-weight: 750; font-size: 13px; }
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer{
+  padding: 18px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer__content{
+  display:flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: rgba(231,238,252,0.82);
+}
+
+
+/* =========================================================
+   SECTION THEME (SOFT)
+========================================================= */
+.section--soft{
+  background: #0F1A2E;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.section--soft .service,
+.section--soft .step,
+.section--soft details,
+.section--soft .cta-strip,
+.section--soft .contact__box{
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.10);
 }
