@@ -24,6 +24,7 @@
   bindCta("ctaContact", defaultMsg);
   bindCta("fabWhatsapp", defaultMsg);
   bindCta("ctaServicos", defaultMsg);
+  bindCta("ctaAtendimento", defaultMsg);
 
   // Year in footer
   const yearEl = document.getElementById("year");

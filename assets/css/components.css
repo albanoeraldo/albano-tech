@@ -110,34 +110,21 @@
 }
 .service__icon{
   width: 42px; height: 42px;
-  display:grid; place-items:center;
+  display: grid;
+  place-items: center;
   border-radius: 14px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
   margin-bottom: 10px;
+  color: rgba(32,192,248,0.95);
+}
+
+.service__icon i{
   font-size: 18px;
 }
+
 .service h3{ margin: 0 0 8px; font-size: 16px; }
 .service p{ margin: 0; color: var(--muted); }
-
-.service--featured{
-  position: relative;
-  border-color: rgba(32,192,248,0.28);
-  background: rgba(32,192,248,0.06);
-}
-
-.service__tag{
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 12px;
-  font-weight: 800;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(32,192,248,0.25);
-  background: rgba(0,0,0,0.25);
-  color: rgba(255,255,255,0.9);
-}
 
 /* Steps */
 .steps{
@@ -274,4 +261,85 @@ details p{ margin: 10px 0 0; color: var(--muted); }
   gap: 10px;
   flex-wrap: wrap;
   color: rgba(231,238,252,0.82);
+}
+
+.service--featured{
+  position: relative;
+  border-color: rgba(32,192,248,0.28);
+  background: rgba(32,192,248,0.06);
+}
+
+.service__tag{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(32,192,248,0.25);
+  background: rgba(0,0,0,0.25);
+  color: rgba(255,255,255,0.9);
+}
+
+.section--soft{
+  background: #0F1A2E;          
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.section--soft .service,
+.section--soft .step,
+.section--soft .testimonial,
+.section--soft details,
+.section--soft .cta-strip,
+.section--soft .contact__box{
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.10);
+}
+
+.cta-strip--whatsapp{
+  border: 1px solid rgba(37, 211, 102, 0.30);
+  background:
+    radial-gradient(800px 220px at 10% 50%, rgba(37, 211, 102, 0.18), transparent 60%),
+    rgba(255,255,255,0.02);
+}
+
+.cta-strip--whatsapp p{
+  color: rgba(255,255,255,0.82);
+}
+
+.cta-strip--whatsapp .btn--primary{
+  border-color: rgba(37, 211, 102, 0.55);
+  background: linear-gradient(135deg, rgba(37,211,102,1), rgba(18,140,126,1));
+  box-shadow: 0 14px 28px rgba(37, 211, 102, 0.18);
+}
+
+/* Bloco "Atendimento" (mais informativo e profissional) */
+.cta-strip--info{
+  border: 1px solid rgba(32,192,248,0.18);
+  background: rgba(255,255,255,0.02);
+}
+
+.info-list{
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.info-item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.78);
+  font-size: 14px;
+}
+
+.info-item i{
+  width: 18px;
+  text-align: center;
+  color: rgba(32,192,248,0.95);
+}
+
+.info-item strong{
+  color: rgba(255,255,255,0.92);
 }
