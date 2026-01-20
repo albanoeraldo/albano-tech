@@ -349,35 +349,6 @@ details p{
   text-decoration: underline;
 }
 
-
-/* =========================================================
-   FLOATING WHATSAPP BUTTON
-========================================================= */
-.fab{
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 60;
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  padding: 12px 14px;
-  border-radius: 999px;
-  background: rgba(16, 24, 39, 0.82);
-  border: 1px solid rgba(79,140,255,0.25);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  transition: transform .14s ease, background .14s ease, border-color .14s ease;
-}
-
-.fab:hover{
-  transform: translateY(-1px);
-  border-color: rgba(79,140,255,0.40);
-}
-
-.fab__icon{ font-size: 16px; }
-.fab__text{ font-weight: 750; font-size: 13px; }
-
-
 /* =========================================================
    FOOTER
 ========================================================= */

@@ -1,70 +1,70 @@
 (function () {
-  const phoneE164 = "5547984212803"; // +55 47 98421-2803
+  const phoneE164 = "5547984212803";
   const defaultMsg =
     "Olá! Vim pelo site da Albano Tech. Quero um orçamento.\n" +
     "Equipamento: PC/Notebook —\n" +
     "Problema: —\n" +
     "Cidade/bairro: —";
 
-  function waHttp(message) {
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || "");
+  }
+
+  function waWeb(message) {
     return `https://wa.me/${phoneE164}?text=${encodeURIComponent(message)}`;
   }
 
-  function openWhatsApp(message) {
+  function waIosScheme(message) {
     const enc = encodeURIComponent(message);
+    return `whatsapp://send?phone=${phoneE164}&text=${enc}`;
+  }
+
+  function waAndroidIntent(message) {
+    const enc = encodeURIComponent(message);
+    return (
+      `intent://send?phone=${phoneE164}&text=${enc}` +
+      `#Intent;scheme=whatsapp;package=com.whatsapp;end`
+    );
+  }
+
+  function openWhatsAppMobile(message) {
+    const urlWeb = waWeb(message);
     const ua = navigator.userAgent || "";
 
-    // ANDROID (abre o app via intent)
     if (/Android/i.test(ua)) {
-      const intent =
-        `intent://send?phone=${phoneE164}&text=${enc}` +
-        `#Intent;scheme=whatsapp;package=com.whatsapp;end`;
-
-      window.location.href = intent;
-
-      // fallback para web, se o intent falhar
-      setTimeout(() => {
-        window.location.href = waHttp(message);
-      }, 900);
-
+      window.location.href = waAndroidIntent(message);
+      setTimeout(() => (window.location.href = urlWeb), 900);
       return;
     }
 
-    // iOS (abre o app via esquema)
     if (/iPhone|iPad|iPod/i.test(ua)) {
-      window.location.href = `whatsapp://send?phone=${phoneE164}&text=${enc}`;
-
-      // fallback para web, se não abrir
-      setTimeout(() => {
-        window.location.href = waHttp(message);
-      }, 900);
-
+      window.location.href = waIosScheme(message);
+      setTimeout(() => (window.location.href = urlWeb), 900);
       return;
     }
 
-    // Desktop / outros
-    window.location.href = waHttp(message);
+    window.location.href = urlWeb;
   }
 
   function bindCta(id, message) {
     const el = document.getElementById(id);
     if (!el) return;
 
-    // deixa um href válido como fallback
-    el.setAttribute("href", waHttp(message));
+    el.setAttribute("href", waWeb(message));
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener noreferrer");
 
     el.addEventListener("click", function (e) {
-      e.preventDefault();
-      openWhatsApp(message);
+      if (!isMobile()) return; 
+      e.preventDefault();      
+      openWhatsAppMobile(message);
     });
   }
 
-  // IDs que existem no seu index atual
-  ["ctaHeader", "ctaHero", "ctaServicos", "ctaContact", "ctaPhone", "fabWhatsapp"].forEach((id) =>
+  ["ctaHeader", "ctaHero", "ctaServicos", "ctaContact", "ctaPhone"].forEach((id) =>
     bindCta(id, defaultMsg)
   );
 
-  // Ano no footer
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
