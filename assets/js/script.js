@@ -1,7 +1,7 @@
 (function () {
   const phoneE164 = "5547984212803";
   const defaultMsg =
-    "Olá! Vim pelo site da Albano Tech. Quero um orçamento.\n" +
+    "Olá! Vim pelo site do Albano Tech. Quero um orçamento.\n" +
     "Equipamento: PC/Notebook —\n" +
     "Problema: —\n" +
     "Cidade/bairro: —";

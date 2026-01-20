@@ -8,8 +8,8 @@
   top: 0;
   z-index: 50;
   backdrop-filter: blur(14px);
-  background: rgba(11,15,23,0.55);
-  border-bottom: 1px solid var(--border);
+  background: rgba(18, 26, 40, 0.92);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .topbar__content{
@@ -32,8 +32,9 @@
 }
 
 .brand__wordmark{
-  height: 40px;
-  width: auto;
+  height: 48px;        /* aumenta um pouco */
+  width: 100px;        /* define largura do "frame" */
+  object-fit: contain; /* garante que não distorce */
   display: block;
 }
 
