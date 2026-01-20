@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 @media (max-width: 880px){
-  .topbar__actions{ width: 100%; justify-content: flex-start; }
+  #topbar__actions{
+    display: none !important;
+  }
 
   .grid{ grid-template-columns: 1fr; }
   .steps{ grid-template-columns: 1fr; }
