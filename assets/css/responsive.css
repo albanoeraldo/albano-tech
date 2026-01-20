@@ -12,6 +12,9 @@
 }
 
 @media (max-width: 640px){
+  #ctaHeader{
+    display: none !important;
+  }
 
   .topbar__content{
     display: flex;
